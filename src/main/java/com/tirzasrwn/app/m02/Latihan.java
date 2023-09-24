@@ -1,4 +1,4 @@
-package com.tirzasrwn.app;
+package com.tirzasrwn.app.m02;
 
 import java.util.Scanner;
 
