@@ -54,7 +54,7 @@ public class MaleSearch {
     System.out.println();
   }
 
-  public static formatBiodata[] mencariLaki(formatBiodata biodataMahasiswa[]) {
+  public static void mencariLaki(formatBiodata biodataMahasiswa[]) {
     formatBiodata hanyaLaki[] = new formatBiodata[10];
     char kataKunci = 'l';
     int counterFound = 0;
@@ -64,7 +64,19 @@ public class MaleSearch {
         counterFound++;
       }
     }
-    return hanyaLaki;
+    System.out.println();
+    System.out.println("NAMA\tALAMAT\tUMUR\tJEKEL\tHOBI1\tHOBI2\tHOBI3\tIPK");
+    for (int i = 0; i < counterFound; i++) {
+      System.out.print(hanyaLaki[i].nama + "\t");
+      System.out.print(hanyaLaki[i].alamat + "\t");
+      System.out.print(hanyaLaki[i].umur + "\t");
+      System.out.print(hanyaLaki[i].jekel + "\t");
+      System.out.print(hanyaLaki[i].hobi[0] + "\t");
+      System.out.print(hanyaLaki[i].hobi[1] + "\t");
+      System.out.print(hanyaLaki[i].hobi[2] + "\t");
+      System.out.println(hanyaLaki[i].ipk);
+    }
+    System.out.println();
   }
 
   public static void main(String[] args) {
@@ -74,7 +86,6 @@ public class MaleSearch {
     biodataMahasiswa[2] = new formatBiodata();
     ngentriData(biodataMahasiswa);
     tampilkanData(biodataMahasiswa);
-    formatBiodata hanyaLaki[] = mencariLaki(biodataMahasiswa);
-    tampilkanData(hanyaLaki);
+    mencariLaki(biodataMahasiswa);
   }
 }

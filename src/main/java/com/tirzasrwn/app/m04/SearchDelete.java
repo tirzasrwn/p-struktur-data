@@ -63,7 +63,7 @@ public class SearchDelete {
     N--;
   }
 
-  public static void mencariDatadanHapus(formatBiodata biodataMahasiswa[]) {
+  public static void mencariDataDanHapus(formatBiodata biodataMahasiswa[]) {
     String kataKunci;
     int lokasi = -1;
     boolean statusKetemu = false;
@@ -103,7 +103,7 @@ public class SearchDelete {
     biodataMahasiswa[2] = new formatBiodata();
     ngentriData(biodataMahasiswa);
     tampilkanData(biodataMahasiswa);
-    mencariDatadanHapus(biodataMahasiswa);
+    mencariDataDanHapus(biodataMahasiswa);
     tampilkanData(biodataMahasiswa);
   }
 }

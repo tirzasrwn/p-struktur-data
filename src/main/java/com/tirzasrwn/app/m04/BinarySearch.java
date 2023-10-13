@@ -53,6 +53,7 @@ public class BinarySearch {
     }
     System.out.println();
   }
+
   public static void mencariDataBiner(formatBiodata biodataMahasiswa[]) {
     String kataKunci;
     int lokasi = -1;
