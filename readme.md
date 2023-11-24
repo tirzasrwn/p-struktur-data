@@ -11,6 +11,12 @@ This repository is for data structure practical class. m stand for module, so if
 - maven
 - make
 
+This project is generated with maven.
+
+```sh
+mvn archetype:generate -DgroupId=com.tirzasrwn.app -DartifactId=p-struktur-data -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+```
+
 ## Run
 
 ```sh
