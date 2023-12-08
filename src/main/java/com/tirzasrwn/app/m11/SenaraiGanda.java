@@ -1,25 +1,25 @@
-package com.tirzasrwn.app.m10;
+package com.tirzasrwn.app.m11;
 
 import java.util.Scanner;
 
-class simpul { // bagian deklarasi struktur record
-               // ------------------------------
+class simpulG { // bagian deklarasi struktur record
+                // ------------------------------
   String nama;
   String alamat;
   int umur;
   char jekel;
   String hobi[] = new String[3];
   float ipk;
-  simpul kiri;
-  simpul kanan;
+  simpulG kiri;
+  simpulG kanan;
 }
 
 /**
  * SenaraiGanda
  */
 public class SenaraiGanda {
-  public static simpul awal;
-  public static simpul akhir;
+  public static simpulG awal;
+  public static simpulG akhir;
   public static void inisialisasiSenaraiKosong() {
     awal = null;
     akhir = null;
@@ -56,9 +56,9 @@ public class SenaraiGanda {
     HOBI[2] = masukan.next();
     System.out.print("Silakan masukkan IPK anda : ");
     IPK = masukan.nextFloat();
-    //------------bagian menciptakan & mengisi simpul baru--------------
-    simpul baru;
-    baru = new simpul();
+    //------------bagian menciptakan & mengisi simpulG baru--------------
+    simpulG baru;
+    baru = new simpulG();
     baru.nama = NAMA;
     baru.alamat = ALAMAT;
     baru.umur = UMUR;
@@ -67,7 +67,7 @@ public class SenaraiGanda {
     baru.hobi[1] = HOBI[1];
     baru.hobi[2] = HOBI[2];
     baru.ipk = IPK;
-    //--------bagian mencangkokkan simpul baru ke dalam simpul lama----------
+    //--------bagian mencangkokkan simpulG baru ke dalam simpul lama----------
     if (awal == null)
     // jika senarai masih kosong
     {
@@ -115,9 +115,9 @@ public class SenaraiGanda {
     HOBI[2] = masukan.next();
     System.out.print("Silakan masukkan IPK anda : ");
     IPK = masukan.nextFloat();
-    //------------bagian menciptakan & mengisi simpul baru--------------
-    simpul baru;
-    baru = new simpul();
+    //------------bagian menciptakan & mengisi simpulG baru--------------
+    simpulG baru;
+    baru = new simpulG();
     baru.nama = NAMA;
     baru.alamat = ALAMAT;
     baru.umur = UMUR;
@@ -126,7 +126,7 @@ public class SenaraiGanda {
     baru.hobi[1] = HOBI[1];
     baru.hobi[2] = HOBI[2];
     baru.ipk = IPK;
-    //--------bagian mencangkokkan simpul baru ke dalam simpul lama---------
+    //--------bagian mencangkokkan simpulG baru ke dalam simpul lama---------
     if (awal == null)
     // jika senarai kosong
     {
@@ -145,7 +145,7 @@ public class SenaraiGanda {
   }
   public static int hitungJumlahSimpul() {
     int N = 0;
-    simpul bantu;
+    simpulG bantu;
     bantu = awal;
     while (bantu != null) {
       N++;
@@ -158,10 +158,10 @@ public class SenaraiGanda {
     Scanner masukan1 = new Scanner(System.in);
     System.out.println("Tentukan Lokasi Penambahan Data");
     int LOKASI = masukan1.nextInt();
-    int jumlahSimpulYangAda = hitungJumlahSimpul();
+    int jumlahsimpulGYangAda = hitungJumlahSimpul();
     if (LOKASI == 1)
       System.out.println("Lakukan penambahan di depan");
-    else if (LOKASI > jumlahSimpulYangAda)
+    else if (LOKASI > jumlahsimpulGYangAda)
       System.out.println("Lakukan penambahan di belakang");
     else { //------------bagian entri data dari keyboard--------------
       String NAMA;
@@ -196,15 +196,15 @@ public class SenaraiGanda {
       System.out.print("Silakan masukkan IPK anda : ");
       IPK = masukan.nextFloat();
       //------------bagian menemukan posisi yang dikehendaki-----------
-      simpul bantu;
+      simpulG bantu;
       bantu = awal;
       int i = 1;
       while ((i < LOKASI) && (bantu != akhir)) {
         bantu = bantu.kanan;
         i++;
       }
-      //------------bagian menciptakan & mengisi simpul baru-----------
-      simpul baru = new simpul();
+      //------------bagian menciptakan & mengisi simpulG baru-----------
+      simpulG baru = new simpulG();
       baru.nama = NAMA;
       baru.alamat = ALAMAT;
       baru.umur = UMUR;
@@ -213,7 +213,7 @@ public class SenaraiGanda {
       baru.hobi[1] = HOBI[1];
       baru.hobi[2] = HOBI[2];
       baru.ipk = IPK;
-      //------bagian mencangkokkan simpul baru ke dalam linkedlist lama------
+      //------bagian mencangkokkan simpulG baru ke dalam linkedlist lama------
       baru.kiri = bantu.kiri;
       baru.kiri.kanan = baru;
       baru.kanan = bantu;
@@ -230,7 +230,7 @@ public class SenaraiGanda {
       Scanner masukan = new Scanner(System.in);
       System.out.print("Silakan masukkan nama yang ingin dihapus : ");
       String NAMACARI = masukan.nextLine();
-      if (awal == akhir) // jika hanya ada sebuah simpul
+      if (awal == akhir) // jika hanya ada sebuah simpulG
       {
         if (awal.nama.equals(NAMACARI)) {
           System.out.println("menghapus " + NAMACARI + " dilakukan..");
@@ -243,7 +243,7 @@ public class SenaraiGanda {
         awal = awal.kanan;
         awal.kiri = null;
       } else {
-        simpul bantu;
+        simpulG bantu;
         bantu = awal.kanan;
         while (bantu.nama.equals(NAMACARI) == false) {
           bantu = bantu.kanan;
@@ -272,7 +272,7 @@ public class SenaraiGanda {
       System.out.println("-------------");
       System.out.println("NO NAMA ALAMAT UMUR JEKEL IPK ");
       System.out.println("-------------");
-      simpul bantu;
+      simpulG bantu;
       bantu = awal;
       while (bantu != null) {
         System.out.print(bantu.nama + "\t ");
@@ -296,7 +296,7 @@ public class SenaraiGanda {
       System.out.println("---------");
       System.out.println("NO NAMA ALAMAT UMUR JEKEL IPK ");
       System.out.println("----------");
-      simpul bantu;
+      simpulG bantu;
       bantu = akhir;
       while (bantu != null) {
         System.out.print(bantu.nama + "\t ");
@@ -312,18 +312,84 @@ public class SenaraiGanda {
       System.out.println("");
     }
   }
+
+  public static void tukarNilai(simpulG X, simpulG Y) {
+    simpulG sementara = new simpulG();
+    sementara.nama = X.nama;
+    sementara.alamat = X.alamat;
+    sementara.umur = X.umur;
+    sementara.jekel = X.jekel;
+    sementara.ipk = X.ipk;
+    X.nama = Y.nama;
+    X.alamat = Y.alamat;
+    X.umur = Y.umur;
+    X.jekel = Y.jekel;
+    X.ipk = Y.ipk;
+    Y.nama = sementara.nama;
+    Y.alamat = sementara.alamat;
+    Y.umur = sementara.umur;
+    Y.jekel = sementara.jekel;
+    Y.ipk = sementara.ipk;
+  }
+
+  public static void mengurutkanDataBubble_TeknikTukarNilai() {
+    int N = hitungJumlahSimpul();
+    simpulG A = null;
+    simpulG B = null;
+    simpulG berhenti = akhir.kanan;
+    System.out.println("Banyaknya simpul = " + hitungJumlahSimpul());
+    for (int i = 1; i <= hitungJumlahSimpul() - 1; i++) {
+      A = awal;
+      B = awal.kanan;
+      int nomor = 1;
+      while (B != berhenti) {
+        if (A.nama.compareTo(B.nama) > 0) {
+          // tukarkan elemen dari simpul A dan elemen dari simpul B
+          tukarNilai(A, B);
+        }
+        A = A.kanan;
+        B = B.kanan;
+        nomor++;
+      }
+      berhenti = A;
+    }
+    System.out.println("===PROSES PENGURUTAN BUBBLE SELESAI======");
+  }
+
+  public static void cariLinear() {
+    if (awal == null) // jika senarai masih kosong
+      System.out.print("....MAAF SENARAI KOSONG. ...");
+    else // jika senarai tidak kosong
+    {
+      Scanner masukan = new Scanner(System.in);
+      System.out.print("Silakan masukkan nama yang anda cari : ");
+      String NAMACARI = masukan.nextLine();
+      boolean statusKetemu = false;
+      int i = 0;
+      int posisiKetemu = -1;
+      simpulG bantu;
+      bantu = awal;
+      while (bantu != null) {
+        if (NAMACARI.equals(bantu.nama)) {
+          statusKetemu = true;
+          posisiKetemu = i;
+        }
+        bantu = bantu.kanan;
+        i++;
+      }
+      System.out.println("Status Ketemu = " + statusKetemu + " di posisi ke " +
+                         posisiKetemu);
+    }
+  }
+
   public static void main(String[] args) {
     inisialisasiSenaraiKosong();
     tambahDepan();
     tambahDepan();
     tambahDepan();
-    tambahBelakang();
-    tambahBelakang();
-    cetakSenaraiMaju();
-    hapus();
     tambahDepan();
-    tambahBelakang();
-    tambahTengah();
-    cetakSenaraiMundur();
+    tambahDepan();
+    cetakSenaraiMaju();
+    cariLinear();
   }
 }
