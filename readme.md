@@ -24,4 +24,6 @@ mvn archetype:generate -DgroupId=com.tirzasrwn.app -DartifactId=p-struktur-data 
 make args="m03.CRUDArray"
 # or if want to just run
 make run args="m03.CRUDArray"
+# alternative
+mvn clean package exec:java -Dexec.mainClass="com.tirzasrwn.app.m03.CRUDArray"
 ```
